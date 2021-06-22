@@ -1,0 +1,118 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pizzeria
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h1>Seleccione el tipo de masa</h1>
+
+  <ion-slides pager="true">
+    <ion-slide>
+      <img src="../../assets/images/madre.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/fina.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/gruesa.jpg">
+    </ion-slide>
+  </ion-slides>
+  <br>
+  <ion-list>
+    <ion-label>Masa Madre</ion-label>
+    <ion-checkbox (click)="tipoMasa('madre')" color="primary"></ion-checkbox>
+    <br>
+    <ion-label>Masa Fina</ion-label>
+    <ion-checkbox (click)="tipoMasa('fina')" color="primary"></ion-checkbox>
+    <br>
+    <ion-label>Masa Gruesa</ion-label>
+    <ion-checkbox (click)="tipoMasa('gr')" color="primary"></ion-checkbox>
+  </ion-list>
+
+
+  <h1>Seleccione un tipo de pizza</h1>
+  <ion-slides pager="true">
+    <ion-slide>
+      <img src="../../assets/images/carnes.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/vegana.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/haw.jpg">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-label>3 carnes (peperoni, jamon, tocino)</ion-label>
+  <ion-checkbox (click)="tipoPizza('carnes')" color="primary"></ion-checkbox>
+  <br>
+  <ion-label>Vegetariana</ion-label>
+  <ion-checkbox (click)="tipoPizza('vegana')" color="primary"></ion-checkbox>
+  <br>
+  <ion-label>Hawaiana</ion-label>
+  <ion-checkbox (click)="tipoPizza('haw')" color="primary"></ion-checkbox>
+  <br>
+
+  <h1>Ingredientes Extras</h1>
+  <ion-slides pager="true">
+    <ion-slide>
+      <img src="../../assets/images/jam.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/pia.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/cham.jpg">
+    </ion-slide>
+  </ion-slides>
+  <br>
+
+  <ion-label>Jamon</ion-label>
+  <ion-checkbox (click)="ingredienteSelected('jam')" color="primary"></ion-checkbox>
+  <br>
+  <ion-label>Piña</ion-label>
+  <ion-checkbox (click)="ingredienteSelected('pina')" color="primary"></ion-checkbox>
+  <br>
+  <ion-label>champiñones</ion-label>
+  <ion-checkbox (click)="ingredienteSelected('champinones')" color="primary"></ion-checkbox>
+
+  <br>
+
+  <h1>Pedido Final</h1>
+  <ion-slides pager="true">
+    <ion-slide>
+      <img src="{{imgMasa}}">
+    </ion-slide>
+    <ion-slide>
+      <img src="{{imgPizza}}">
+    </ion-slide>
+    <ion-slide>
+      <img src="{{imgIngrediente}}">
+    </ion-slide>
+  </ion-slides>
+  <p>
+    Masa: {{masaSelected}} <br>
+    Precio: ${{precioMasa}} <br>
+    Tipo de Pizza: {{pizzaSelected}} <br>
+    Precio: ${{preciopizza}} <br>
+    Ingrediente extra: {{ingrediente}} <br>
+    Precio:${{precioIngrediente}} <br>
+  </p>
+  <h1>Total a pagar</h1>
+      ${{precioMasa+preciopizza+precioIngrediente}}
+</ion-content>
+<ion-footer style="background-color: black;">
+  <h1>Detalles Orden</h1>
+  <p>
+    Masa: {{masaSelected}} <br>
+    Precio: ${{precioMasa}} <br>
+    Tipo de Pizza: {{pizzaSelected}} <br>
+    Precio: ${{preciopizza}} <br>
+    Ingrediente extra: {{ingrediente}} <br>
+    Precio:${{precioIngrediente}} <br>
+  </p>
+</ion-footer>

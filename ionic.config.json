@@ -1,0 +1,7 @@
+{
+  "name": "comidaSlides",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
